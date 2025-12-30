@@ -1,0 +1,42 @@
+[
+  {
+    "ApiName": "Plaka Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "Güncel TC > GSM Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "İşyeri Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "AÖL Vesika Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "TC Sorgu PRO",
+    "Status": "true"
+  },
+  {
+    "ApiName": "Üniversite Mezun Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "Okul No Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "Hane Sorgu",
+    "Status": "true"
+  },
+  {
+    "ApiName": "TC Sorgu PRO",
+    "Status": "true"
+  },
+  {
+    "ApiName": "İlaç Sorgu",
+    "Status": "false"
+  }
+]
