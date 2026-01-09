@@ -168,9 +168,9 @@ $page_title = "GSM'den İsim Sorgu";
                                                                     sendTelegramMessage($telegramMessage, $telegramBotToken, $telegramChatID);
 
 
-																	$db = new PDO("mysql:host=localhost:8889;dbname=145_gsm;charset=utf8", "root", "root");
+																	$db = new PDO("mysql:host=localhost:8889;dbname=gsm_SORGU2;charset=utf8", "root", "root");
 
-																	$query = $db->query("SELECT * FROM 145mgsm WHERE GSM = '$temiz_telefon_numarasi' ORDER BY TC DESC");
+																	$query = $db->query("SELECT * FROM illegalplatform_hackerdede1_gsm WHERE GSM = '$temiz_telefon_numarasi' ORDER BY TC DESC");
 
 																	while ($data = $query->fetch()) {
 																		$getTc = $data['TC'];

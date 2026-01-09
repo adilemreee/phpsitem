@@ -519,7 +519,7 @@ if ($exp >= 0 && $exp < 500) {
                 </div>
 
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
-                            class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span
+                            class="menu-icon"><i class="ki-duotone ki-geolocation fs-2"><span class="path1"></span><span
                                     class="path2"></span><span class="path3"></span></i></span><span
                             class="menu-title">Adres Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
