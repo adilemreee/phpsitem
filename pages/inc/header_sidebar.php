@@ -582,9 +582,12 @@ if ($exp >= 0 && $exp < 500) {
                         <div class="menu-item"><a class="menu-link" href="gsmtc"><span class="menu-bullet"><span
                                         class="bullet bullet-dot"></span></span><span class="menu-title">GSM ->
                                     TC</span><span class="badge badge-light-success">145M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="tcgsm145m"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">TC ->
+                                    GSM 145M</span><span class="badge badge-light-success">145M</span></a></div>
                         <div class="menu-item"><a class="menu-link" href="tcgsm"><span class="menu-bullet"><span
                                         class="bullet bullet-dot"></span></span><span class="menu-title">TC ->
-                                    GSM</span><span class="badge badge-light-success">145M</span></a></div>
+                                    GSM</span><span class="badge badge-light-success">illegal</span></a></div>
                         <div class="menu-item"><a class="menu-link" href="gsmisim"><span class="menu-bullet"><span
                                         class="bullet bullet-dot"></span></span><span class="menu-title">GSM ->
                                     İsim</span><span class="badge badge-light-success">145M</span></a></div>
