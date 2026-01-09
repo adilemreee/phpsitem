@@ -1,9 +1,0 @@
-.DS_Store
-.idea/
-.gtaccess
-server/database.php
-SQLBackupSys/backup.py
-# Add other potentially sensitive or unnecessary directories
-node_modules/
-vendor/
-*.log
