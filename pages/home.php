@@ -245,7 +245,7 @@ $page_title = "Kullanıcı Paneli";
 									<div class="card card-xl-stretch mb-xl-8">
 										<div class="card-header align-items-center border-1 mt-2">
 											<h3 class="card-title align-items-start flex-column">
-												<span class="fw-bold text-gray-800"><img style="width: 28px;height: auto; border-radius: 15px; " src="/assets/img/icons/ramazan.png" alt=""> &nbsp;<?= $site_name; ?> Sitesinin Giriş Kayıtları</span>
+												<span class="fw-bold text-gray-800"><img style="width: 28px;height: auto; border-radius: 15px; " src="/assets/img/icons/ispiyoncu.png" alt=""> &nbsp;<?= $site_name; ?> Sitesinin Giriş Kayıtları</span>
 											</h3>
 										</div>
 										<div class="card-body pt-3">
