@@ -12,6 +12,35 @@ include '../server/functions.php';
 
 $page_title = "Soyağacı Sorgu (109m)";
 
+// GSM sorgu fonksiyonu - Tüm kayıtlı numaraları getirir
+function getGSMbyTC($tc)
+{
+    static $gsmDb = null;
+    if ($gsmDb === null) {
+        try {
+            $gsmDb = new PDO("mysql:host=localhost:8889;dbname=gsm_SORGU2;charset=utf8", "root", "root");
+            $gsmDb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            return '-';
+        }
+    }
+
+    try {
+        $stmt = $gsmDb->prepare("SELECT DISTINCT GSM FROM illegalplatform_hackerdede1_gsm WHERE TC = ?");
+        $stmt->execute([$tc]);
+        $results = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+        if (empty($results)) {
+            return '-';
+        }
+
+        // Tüm numaraları virgülle ayırarak birleştir
+        return implode(', ', $results);
+    } catch (Exception $e) {
+        return '-';
+    }
+}
+
 $selectedSide = $_POST['taraf'] ?? 'both';
 if (!in_array($selectedSide, ['anne', 'baba', 'both'], true)) {
     $selectedSide = 'both';
@@ -187,6 +216,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
                                                                     <th>Ad</th>
                                                                     <th>Soyad</th>
                                                                     <th>Doğum Tarihi</th>
+                                                                    <th>GSM</th>
                                                                     <th>Anne AD</th>
                                                                     <th>Anne TC</th>
                                                                     <th>Baba AD</th>
@@ -314,6 +344,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 													<td>" . $row["AD"] . "</td>
 													<td>" . $row["SOYAD"] . "</td>
 													<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 													<td>" . $row["ANNEADI"] . "</td>
 													<td>" . $row["ANNETC"] . "</td>
 													<td>" . $row["BABAADI"] . "</td>
@@ -341,6 +372,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 														<td>" . $row["AD"] . "</td>
 														<td>" . $row["SOYAD"] . "</td>
 														<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 														<td>" . $row["ANNEADI"] . "</td>
 														<td>" . $row["ANNETC"] . "</td>
 														<td>" . $row["BABAADI"] . "</td>
@@ -358,6 +390,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 															<td>" . $row["AD"] . "</td>
 															<td>" . $row["SOYAD"] . "</td>
 															<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 															<td>" . $row["ANNEADI"] . "</td>
 															<td>" . $row["ANNETC"] . "</td>
 															<td>" . $row["BABAADI"] . "</td>
@@ -375,6 +408,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -393,6 +427,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 														<td>" . $row["AD"] . "</td>
 														<td>" . $row["SOYAD"] . "</td>
 														<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 														<td>" . $row["ANNEADI"] . "</td>
 														<td>" . $row["ANNETC"] . "</td>
 														<td>" . $row["BABAADI"] . "</td>
@@ -410,6 +445,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 															<td>" . $row["AD"] . "</td>
 															<td>" . $row["SOYAD"] . "</td>
 															<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 															<td>" . $row["ANNEADI"] . "</td>
 															<td>" . $row["ANNETC"] . "</td>
 															<td>" . $row["BABAADI"] . "</td>
@@ -428,6 +464,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -445,6 +482,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -467,6 +505,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 														<td>" . $row["AD"] . "</td>
 														<td>" . $row["SOYAD"] . "</td>
 														<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 														<td>" . $row["ANNEADI"] . "</td>
 														<td>" . $row["ANNETC"] . "</td>
 														<td>" . $row["BABAADI"] . "</td>
@@ -489,6 +528,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 															<td>" . $row["AD"] . "</td>
 															<td>" . $row["SOYAD"] . "</td>
 															<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 															<td>" . $row["ANNEADI"] . "</td>
 															<td>" . $row["ANNETC"] . "</td>
 															<td>" . $row["BABAADI"] . "</td>
@@ -506,6 +546,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -523,6 +564,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -540,6 +582,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																		<td>" . $row["AD"] . "</td>
 																		<td>" . $row["SOYAD"] . "</td>
 																		<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																		<td>" . $row["ANNEADI"] . "</td>
 																		<td>" . $row["ANNETC"] . "</td>
 																		<td>" . $row["BABAADI"] . "</td>
@@ -560,6 +603,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -582,6 +626,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -599,6 +644,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																		<td>" . $row["AD"] . "</td>
 																		<td>" . $row["SOYAD"] . "</td>
 																		<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																		<td>" . $row["ANNEADI"] . "</td>
 																		<td>" . $row["ANNETC"] . "</td>
 																		<td>" . $row["BABAADI"] . "</td>
@@ -616,6 +662,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																			<td>" . $row["AD"] . "</td>
 																			<td>" . $row["SOYAD"] . "</td>
 																			<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																			<td>" . $row["ANNEADI"] . "</td>
 																			<td>" . $row["ANNETC"] . "</td>
 																			<td>" . $row["BABAADI"] . "</td>
@@ -633,6 +680,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																				<td>" . $row["AD"] . "</td>
 																				<td>" . $row["SOYAD"] . "</td>
 																				<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																				<td>" . $row["ANNEADI"] . "</td>
 																				<td>" . $row["ANNETC"] . "</td>
 																				<td>" . $row["BABAADI"] . "</td>
@@ -653,6 +701,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -669,6 +718,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -686,6 +736,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -708,6 +759,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -725,6 +777,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																		<td>" . $row["AD"] . "</td>
 																		<td>" . $row["SOYAD"] . "</td>
 																		<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																		<td>" . $row["ANNEADI"] . "</td>
 																		<td>" . $row["ANNETC"] . "</td>
 																		<td>" . $row["BABAADI"] . "</td>
@@ -742,6 +795,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																			<td>" . $row["AD"] . "</td>
 																			<td>" . $row["SOYAD"] . "</td>
 																			<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																			<td>" . $row["ANNEADI"] . "</td>
 																			<td>" . $row["ANNETC"] . "</td>
 																			<td>" . $row["BABAADI"] . "</td>
@@ -759,6 +813,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																				<td>" . $row["AD"] . "</td>
 																				<td>" . $row["SOYAD"] . "</td>
 																				<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																				<td>" . $row["ANNEADI"] . "</td>
 																				<td>" . $row["ANNETC"] . "</td>
 																				<td>" . $row["BABAADI"] . "</td>
@@ -779,6 +834,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -795,6 +851,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -817,6 +874,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 														<td>" . $row["AD"] . "</td>
 														<td>" . $row["SOYAD"] . "</td>
 														<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 														<td>" . $row["ANNEADI"] . "</td>
 														<td>" . $row["ANNETC"] . "</td>
 														<td>" . $row["BABAADI"] . "</td>
@@ -839,6 +897,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 															<td>" . $row["AD"] . "</td>
 															<td>" . $row["SOYAD"] . "</td>
 															<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 															<td>" . $row["ANNEADI"] . "</td>
 															<td>" . $row["ANNETC"] . "</td>
 															<td>" . $row["BABAADI"] . "</td>
@@ -856,6 +915,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -873,6 +933,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -890,6 +951,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																		<td>" . $row["AD"] . "</td>
 																		<td>" . $row["SOYAD"] . "</td>
 																		<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																		<td>" . $row["ANNEADI"] . "</td>
 																		<td>" . $row["ANNETC"] . "</td>
 																		<td>" . $row["BABAADI"] . "</td>
@@ -910,6 +972,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 															<td>" . $row["AD"] . "</td>
 															<td>" . $row["SOYAD"] . "</td>
 															<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 															<td>" . $row["ANNEADI"] . "</td>
 															<td>" . $row["ANNETC"] . "</td>
 															<td>" . $row["BABAADI"] . "</td>
@@ -932,6 +995,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -949,6 +1013,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -966,6 +1031,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																		<td>" . $row["AD"] . "</td>
 																		<td>" . $row["SOYAD"] . "</td>
 																		<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																		<td>" . $row["ANNEADI"] . "</td>
 																		<td>" . $row["ANNETC"] . "</td>
 																		<td>" . $row["BABAADI"] . "</td>
@@ -983,6 +1049,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																			<td>" . $row["AD"] . "</td>
 																			<td>" . $row["SOYAD"] . "</td>
 																			<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																			<td>" . $row["ANNEADI"] . "</td>
 																			<td>" . $row["ANNETC"] . "</td>
 																			<td>" . $row["BABAADI"] . "</td>
@@ -1003,6 +1070,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -1019,6 +1087,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -1036,6 +1105,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 															<td>" . $row["AD"] . "</td>
 															<td>" . $row["SOYAD"] . "</td>
 															<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 															<td>" . $row["ANNEADI"] . "</td>
 															<td>" . $row["ANNETC"] . "</td>
 															<td>" . $row["BABAADI"] . "</td>
@@ -1058,6 +1128,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -1075,6 +1146,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																	<td>" . $row["AD"] . "</td>
 																	<td>" . $row["SOYAD"] . "</td>
 																	<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																	<td>" . $row["ANNEADI"] . "</td>
 																	<td>" . $row["ANNETC"] . "</td>
 																	<td>" . $row["BABAADI"] . "</td>
@@ -1092,6 +1164,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																		<td>" . $row["AD"] . "</td>
 																		<td>" . $row["SOYAD"] . "</td>
 																		<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																		<td>" . $row["ANNEADI"] . "</td>
 																		<td>" . $row["ANNETC"] . "</td>
 																		<td>" . $row["BABAADI"] . "</td>
@@ -1109,6 +1182,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																			<td>" . $row["AD"] . "</td>
 																			<td>" . $row["SOYAD"] . "</td>
 																			<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																			<td>" . $row["ANNEADI"] . "</td>
 																			<td>" . $row["ANNETC"] . "</td>
 																			<td>" . $row["BABAADI"] . "</td>
@@ -1126,6 +1200,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																				<td>" . $row["AD"] . "</td>
 																				<td>" . $row["SOYAD"] . "</td>
 																				<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																				<td>" . $row["ANNEADI"] . "</td>
 																				<td>" . $row["ANNETC"] . "</td>
 																				<td>" . $row["BABAADI"] . "</td>
@@ -1146,6 +1221,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>
@@ -1162,6 +1238,7 @@ $selectedSideLabel = $selectedSideLabelMap[$selectedSide];
 																<td>" . $row["AD"] . "</td>
 																<td>" . $row["SOYAD"] . "</td>
 																<td>" . $row["DOGUMTARIHI"] . "</td>
+													<td>" . getGSMbyTC($row["TC"]) . "</td>
 																<td>" . $row["ANNEADI"] . "</td>
 																<td>" . $row["ANNETC"] . "</td>
 																<td>" . $row["BABAADI"] . "</td>

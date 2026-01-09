@@ -218,10 +218,9 @@ if ($exp >= 0 && $exp < 500) {
                     $textcolor = "danger";
                 } else if ($access_level == 5) {
                     $textcolor = "warning";
-                }
-                else if ($premium >= time() or $access_level == 4) {
+                } else if ($premium >= time() or $access_level == 4) {
                     $textcolor = "info";
-                }  else {
+                } else {
                     $textcolor = "gray-600";
                 }
                 ?>
@@ -348,7 +347,7 @@ if ($exp >= 0 && $exp < 500) {
         </div>
 
         <div class="aside-search">
-           
+
         </div>
     </div>
 
@@ -391,28 +390,59 @@ if ($exp >= 0 && $exp < 500) {
 
                 if ($access_level == 6) {
 
-                ?>
+                    ?>
 
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Admin Paneli</span><span class="menu-arrow"></span></span>
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                                class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span
+                                        class="path2"></span><span class="path3"></span></i></span><span
+                                class="menu-title">Admin Paneli</span><span class="menu-arrow"></span></span>
                         <div class="menu-sub menu-sub-accordion">
-                            <div class="menu-item"><a class="menu-link" href="odemeler"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Ödemeler</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="general-settings"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Ayarlar</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="verify-account"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Kullanıcı Onay</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="users"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Kullanıcı Listesi</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="management-notify"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Bildirim Yönetimi</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="comments-notify"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Bildirim Yorumları</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="ban"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Ban Yönetimi</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="premium"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Premium Üyelik Yönetimi</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="whitelist"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Whitelist Yönetimi</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="sessions"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Kullanıcı Giriş Kayıtları</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="add-money"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Bakiye Ekle</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="money-transfers"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Bakiye Transferleri</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="add-file"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Dosya Paylaşma</span></a></div>
-                            <div class="menu-item"><a class="menu-link" href="comments-file"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Dosya Yorumları</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="odemeler"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span
+                                        class="menu-title">Ödemeler</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="general-settings"><span
+                                        class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                        class="menu-title">Ayarlar</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="verify-account"><span
+                                        class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                        class="menu-title">Kullanıcı Onay</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="users"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Kullanıcı
+                                        Listesi</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="management-notify"><span
+                                        class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                        class="menu-title">Bildirim Yönetimi</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="comments-notify"><span
+                                        class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                        class="menu-title">Bildirim Yorumları</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="ban"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Ban
+                                        Yönetimi</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="premium"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Premium Üyelik
+                                        Yönetimi</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="whitelist"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Whitelist
+                                        Yönetimi</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="sessions"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Kullanıcı Giriş
+                                        Kayıtları</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="add-money"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Bakiye
+                                        Ekle</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="money-transfers"><span
+                                        class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                        class="menu-title">Bakiye Transferleri</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="add-file"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Dosya
+                                        Paylaşma</span></a></div>
+                            <div class="menu-item"><a class="menu-link" href="comments-file"><span class="menu-bullet"><span
+                                            class="bullet bullet-dot"></span></span><span class="menu-title">Dosya
+                                        Yorumları</span></a></div>
                         </div>
                     </div>
 
-                <?php
+                    <?php
                 }
                 ?>
                 <div class="menu-item pt-0">
@@ -420,10 +450,18 @@ if ($exp >= 0 && $exp < 500) {
                         <span class="menu-heading fw-bold fs-7">Market</span>
                     </div>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-shop fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Mağaza İşlemleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-shop fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Mağaza İşlemleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="market"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Market</span><span class="badge badge-light-success"></span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="add-balance"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Bakiye Yükle</span><span class="badge badge-light-success"></span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="market"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span
+                                    class="menu-title">Market</span><span class="badge badge-light-success"></span></a>
+                        </div>
+                        <div class="menu-item"><a class="menu-link" href="add-balance"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Bakiye
+                                    Yükle</span><span class="badge badge-light-success"></span></a></div>
                     </div>
                 </div>
 
@@ -434,61 +472,135 @@ if ($exp >= 0 && $exp < 500) {
                 </div>
 
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-star text-danger fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Premium Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-star text-danger fs-2"><span
+                                    class="path1"></span><span class="path2"></span><span
+                                    class="path3"></span></i></span><span class="menu-title">Premium
+                            Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="tcsorguv2"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">TC Sorgu PRO</span><span class="badge badge-light-danger">Premium</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="multecisorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Mülteci Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="vergisorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Tapu Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="yabancisorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Yabancı Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="ttnetsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Öğretmen Sorgu</span><span class="badge badge-light-danger">Pasif</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="tcsorguv2"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">TC Sorgu
+                                    PRO</span><span class="badge badge-light-danger">Premium</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="multecisorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Mülteci
+                                    Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="vergisorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Tapu
+                                    Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="yabancisorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Yabancı
+                                    Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="ttnetsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Öğretmen
+                                    Sorgu</span><span class="badge badge-light-danger">Pasif</span></a></div>
                     </div>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">AD-SOYAD Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">AD-SOYAD Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="adsorgupro"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Ad İl İlçe Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="detayliadsorgu_gelismis"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Detaylı Ad Soyad (Gelişmiş)</span><span class="badge badge-light-danger">Premium</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="adsoyadsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Ad Soyad Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="detayliadsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Detaylı Ad Soyad Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="adsorgupro"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Ad İl İlçe
+                                    Sorgu</span><span class="badge badge-light-danger">Premium</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="detayliadsorgu_gelismis"><span
+                                    class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                    class="menu-title">Detaylı Ad Soyad (Gelişmiş)</span><span
+                                    class="badge badge-light-danger">Premium</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="adsoyadsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Ad Soyad
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="detayliadsorgu"><span
+                                    class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                    class="menu-title">Detaylı Ad Soyad Sorgu</span><span
+                                    class="badge badge-light-success">109M</span></a></div>
                     </div>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Adres Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-crown fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Adres Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="adressorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Adres Sorgu</span><span class="badge badge-light-info">FREE</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="plakasorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Güncel Adres Sorgu</span><span class="badge badge-light-success">Yuri</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="hanesorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Hane Sorgu</span><span class="badge badge-light-success">AKTİF</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="adressorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Adres
+                                    Sorgu</span><span class="badge badge-light-info">FREE</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="plakasorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Güncel Adres
+                                    Sorgu</span><span class="badge badge-light-success">Yuri</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="hanesorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Hane
+                                    Sorgu</span><span class="badge badge-light-success">AKTİF</span></a></div>
                     </div>
                 </div>
 
 
 
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-profile-user fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Aile Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-profile-user fs-2"><span
+                                    class="path1"></span><span class="path2"></span><span
+                                    class="path3"></span></i></span><span class="menu-title">Aile Çözümleri</span><span
+                            class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="ailesorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Aile Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="soyagacisorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Soyağacı Sorgu</span><span class="badge badge-light-success">101M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="soyagacisorgu4"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Soyağacı Sorgu(109M)</span><span class="badge badge-light-info">YENİ</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="evliliksorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Evlilik Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="akrabasorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Akraba Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="anneailesorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Anne Tarafı Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="babaailesorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Baba Tarafı Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="annesorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Anne Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="babasorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Baba Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="ailesorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Aile
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="soyagacisorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Soyağacı
+                                    Sorgu</span><span class="badge badge-light-success">101M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="soyagacisorgu4"><span
+                                    class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                    class="menu-title">Soyağacı Sorgu(109M)+ GSM</span><span
+                                    class="badge badge-light-info">YENİ</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="evliliksorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Evlilik
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="akrabasorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Akraba
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="anneailesorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Anne Tarafı
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="babaailesorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Baba Tarafı
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="annesorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Anne
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="babasorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Baba
+                                    Sorgu</span><span class="badge badge-light-success">109M</span></a></div>
                     </div>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-phone fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">GSM Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-phone fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">GSM Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="gsmtc"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">GSM -> TC</span><span class="badge badge-light-success">145M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="tcgsm"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">TC -> GSM</span><span class="badge badge-light-success">145M</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="gsmisim"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">GSM -> İsim</span><span class="badge badge-light-success">145M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="gsmtc"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">GSM ->
+                                    TC</span><span class="badge badge-light-success">145M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="tcgsm"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">TC ->
+                                    GSM</span><span class="badge badge-light-success">145M</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="gsmisim"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">GSM ->
+                                    İsim</span><span class="badge badge-light-success">145M</span></a></div>
 
                     </div>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-wrench fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Diğer Çözümler</span><span class="badge badge-light-success">Aktif</span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-wrench fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Diğer Çözümler</span><span
+                            class="badge badge-light-success">Aktif</span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="ttnettsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">TTNET Sorgu</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="ttnettsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">TTNET
+                                    Sorgu</span></a></div>
                     </div>
                 </div>
                 <div class="menu-item pt-0">
@@ -496,16 +608,25 @@ if ($exp >= 0 && $exp < 500) {
                         <span class="menu-heading fw-bold fs-7">Yardımcı Araçlar</span>
                     </div>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-wrench fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Araçlar</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-wrench fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Araçlar</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-<!--                        <div class="menu-item"><a class="menu-link" href="smsbomber"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">SMS Bomber</span><span class="badge badge-light-danger">Premium</span></a></div>-->
-                        <div class="menu-item"><a class="menu-link" href="discordsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Discord Sorgu</span><span class="badge badge-light-success">2025</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="ipsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">IP Sorgu</span><span class="badge badge-light-success">2025</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="iban"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">IBAN Sorgu</span><span class="badge badge-light-success">2025</span></a></div>
-                        
+                        <!--                        <div class="menu-item"><a class="menu-link" href="smsbomber"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">SMS Bomber</span><span class="badge badge-light-danger">Premium</span></a></div>-->
+                        <div class="menu-item"><a class="menu-link" href="discordsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Discord
+                                    Sorgu</span><span class="badge badge-light-success">2025</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="ipsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">IP
+                                    Sorgu</span><span class="badge badge-light-success">2025</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="iban"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">IBAN
+                                    Sorgu</span><span class="badge badge-light-success">2025</span></a></div>
+
                     </div>
                 </div>
-                                <div class="menu-item menu-accordion" onclick="window.location = 'dosyalar'">
+                <div class="menu-item menu-accordion" onclick="window.location = 'dosyalar'">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <i class="ki-duotone ki-flash-circle fs-2">
@@ -514,20 +635,35 @@ if ($exp >= 0 && $exp < 500) {
                                 <span class="path3"></span>
                             </i>
                         </span>
-                        <span class="menu-title">Dosya Paylaşımı</span> <span class="badge badge-light-success">Yeni</span>
+                        <span class="menu-title">Dosya Paylaşımı</span> <span
+                            class="badge badge-light-success">Yeni</span>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-picture fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Kimlik Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-picture fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Kimlik Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="kimlikolusturucu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Kimlik Oluşturucu</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="kimlikolusturucu"><span
+                                    class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+                                    class="menu-title">Kimlik Oluşturucu</span></a></div>
                     </div>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-like fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Eğlence Çözümleri</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-like fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Eğlence Çözümleri</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="burcsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Burç Sorgu</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="cennetsorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Cennet Sorgu</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="ayaknosorgu"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Ayak Numarası Sorgu</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="burcsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Burç
+                                    Sorgu</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="cennetsorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Cennet
+                                    Sorgu</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="ayaknosorgu"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">Ayak Numarası
+                                    Sorgu</span></a></div>
                     </div>
                 </div>
                 <div class="menu-item pt-0">
@@ -535,14 +671,23 @@ if ($exp >= 0 && $exp < 500) {
                         <span class="menu-heading fw-bold fs-7">Carder Özel</span>
                     </div>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span class="menu-icon"><i class="ki-duotone ki-credit-cart fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span><span class="menu-title">Carder Özel</span><span class="menu-arrow"></span></span>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion"><span class="menu-link"><span
+                            class="menu-icon"><i class="ki-duotone ki-credit-cart fs-2"><span class="path1"></span><span
+                                    class="path2"></span><span class="path3"></span></i></span><span
+                            class="menu-title">Carder Özel</span><span class="menu-arrow"></span></span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item"><a class="menu-link" href="cc"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">CC Checker</span><span class="badge badge-light-success">2024</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="binchecker"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">BIN Checker</span><span class="badge badge-light-success">2024</span></a></div>
-                        <div class="menu-item"><a class="menu-link" href="dnschecker"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">DNS Checker</span><span class="badge badge-light-success">2024</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="cc"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">CC
+                                    Checker</span><span class="badge badge-light-success">2024</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="binchecker"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">BIN
+                                    Checker</span><span class="badge badge-light-success">2024</span></a></div>
+                        <div class="menu-item"><a class="menu-link" href="dnschecker"><span class="menu-bullet"><span
+                                        class="bullet bullet-dot"></span></span><span class="menu-title">DNS
+                                    Checker</span><span class="badge badge-light-success">2024</span></a></div>
                     </div>
                 </div>
-               
+
                 <div class="menu-item pt-0">
                     <div class="menu-content">
                         <span class="menu-heading fw-bold fs-7">Sosyal Alanlar</span>
